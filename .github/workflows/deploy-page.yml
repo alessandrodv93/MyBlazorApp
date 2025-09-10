@@ -22,7 +22,7 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Publish .NET app
-        run: dotnet publish ProgettoPipeline.csproj -c Release -o publish
+        run: dotnet publish MyBlazeApp.csproj -c Release -o publish
 
       - name: Add 404.html for client-side routing
         run: cp publish/wwwroot/index.html publish/wwwroot/404.html
