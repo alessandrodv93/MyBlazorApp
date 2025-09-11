@@ -1,3 +1,20 @@
+:root {
+  /* Palette principale */
+  --color-bg-main: #ffffff;           /* bianco puro per alto contrasto */
+  --color-text-main: #1a1a1a;         /* testo quasi nero */
+  --color-accent:   #0078d4;         /* azzurro acceso per link e bottoni */
+  --color-link:     #005a9e;         /* blu scuro per link normali */
+  --color-link-hover: #004578;       /* blu ancora più scuro al passaggio */
+  
+  /* Sidebar */
+  --color-bg-sidebar: #2b2b2b;       /* grigio scuro uniforme */
+  --color-text-sidebar: #e1e1e1;     /* quasi bianco sul fondo scuro */
+  
+  /* Top bar */
+  --color-bg-top: #f4f4f4;           /* grigio chiaro */
+  --color-border-top: #cccccc;       /* separatore poco invasivo */
+}
+
 .page {
   display: grid;
   min-height: 100vh;
