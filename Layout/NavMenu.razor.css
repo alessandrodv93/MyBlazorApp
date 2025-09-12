@@ -65,7 +65,7 @@
     color: #0056b3;
 }
 
-@media (min-width: 341px) {
+@media (min-width: 641px) {
     .navbar-toggler {
         display: none;
     }
@@ -75,7 +75,6 @@
     }
     
     .nav-scrollable {
-        height: calc(100vh - 3.5rem);
         overflow-y: auto;
     }
 }
