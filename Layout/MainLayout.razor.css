@@ -1,13 +1,11 @@
 :root {
-  --sidebar-width: 240px;
+  --navbar-height: 60px;
 
   /* Palette bianco e celeste */
   --color-bg-main: #ffffff;
   --color-text-main: #333333;
-  --color-bg-sidebar: #add8e6;
-  --color-text-sidebar: #333333;
-  --color-bg-top: #e0f7fa;
-  --color-border-top: #b3e5fc;
+  --color-bg-navbar: #add8e6;
+  --color-border-navbar: #b3e5fc;
   --color-link: #007acc;
   --color-link-hover: #005ea6;
   --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -16,84 +14,42 @@
 .page {
   display: grid;
   min-height: 100vh;
-  grid-template-columns: var(--sidebar-width) 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: var(--navbar-height) 1fr;
   grid-template-areas:
-    "sidebar top"
-    "sidebar main";
+    "navbar"
+    "main";
   background-color: var(--color-bg-main);
   color: var(--color-text-main);
   font-family: var(--font-family);
 }
 
-.sidebar {
-  grid-area: sidebar;
-  background-color: var(--color-bg-sidebar);
-  color: var(--color-text-sidebar);
-  padding: 1rem;
+/* NAVBAR IN ALTO */
+.navbar {
+  grid-area: navbar;
+  background-color: var(--color-bg-navbar);
+  border-bottom: 1px solid var(--color-border-navbar);
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.top-row {
-  grid-area: top;
-  background-color: var(--color-bg-top);
-  border-bottom: 1px solid var(--color-border-top);
-  display: flex;
-  justify-content: flex-end;
   align-items: center;
-  height: 3.5rem;
   padding: 0 1.5rem;
+  height: var(--navbar-height);
 }
 
-.top-row a,
-.top-row .btn-link {
+/* LINK DELLA NAVBAR */
+.navbar a {
   color: var(--color-link);
-  margin-left: 1rem;
   text-decoration: none;
-  white-space: nowrap;
+  margin-right: 1.5rem;
+  font-weight: 500;
 }
 
-.top-row a:hover,
-.top-row .btn-link:hover {
+.navbar a:hover {
   color: var(--color-link-hover);
   text-decoration: underline;
 }
 
+/* CONTENUTO PRINCIPALE */
 main {
   grid-area: main;
   padding: 2rem;
   background-color: var(--color-bg-main);
-}
-
-@media (max-width: 768px) {
-  .page {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto 1fr;
-    grid-template-areas:
-      "top"
-      "sidebar"
-      "main";
-  }
-
-  .sidebar {
-    display: none;
-  }
-
-  .sidebar.open {
-    display: block;
-    width: auto;
-    background-color: var(--color-bg-sidebar);
-  }
-
-  .top-row .menu-toggle {
-    display: block;
-    margin-right: auto;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--color-text-main);
-    cursor: pointer;
-  }
 }
