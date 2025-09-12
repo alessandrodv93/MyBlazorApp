@@ -83,7 +83,7 @@ main {
 
   .sidebar.open {
     display: block;
-    width: 100%;
+    width: auto;
     background-color: var(--color-bg-sidebar);
   }
 
